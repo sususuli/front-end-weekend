@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <title>百度一下，你就知道</title>
+        <style>
+            .nav {
+                float:right;<!-- 右浮动-->
+                list-style:none;<!--没有小点点-->
+                font-weight:bold;<!--字体加粗-->
+            }
+            .nav li{
+                display:inline-block; <!--li横向排列-->
+                margin-left:10px;<!--设置边距-->
+            }
+         
+            .nav a:link,.nav a:visited{
+                color:blue;
+            }
+            .nav a:hover{
+                color:blue;
+            }
+            .nav a:active{
+                color:blue;
+            }
+            img.logo{
+                display: block;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+        
+                clear: both;
+            }
+            .serch{
+                width:90%;
+                 margin-left: auto;
+                margin-right: auto;
+                background-color:ligntblue;
+                text-align:center; 
+                min-width:600px;
+            }
+            .serch-word{
+                width:500px;
+                height:30px;
+                border-right:0;
+                margin-right:-5px;
+            }
+            .serch-camera{
+                position:absolute;
+                display:inline-block;
+                width:20px;
+                height:20px;
+                background:#000;
+                margin-left:-30px;
+                margin-top:8px;
+                background:#fff url(../../image/2.png);
+                no-repeat;
+            }
+            .serch-button{
+                height:35px;
+                <!--margin-left:-5px;text和button的间距-->
+                border:0;
+                background-color:#3385ff;
+                color:#fff;
+                vertical-align:bottom;
+            }
+            .footer{
+                margin-top:200px;
+                font-size:13px;
+                text-align:center;
+                color:#aaa;
+            }
+            .footer .site-name{
+                margin-top:0;
+            }
+            .footer ul{
+                display:inline-block;
+            }
+            .footer li{
+                display:inline-block;
+                margin:0 5px;
+            }
+            .footer a:link 
+            .footer a:visited
+            .footer a:hoverer
+            .footer a:active
+            {
+                margin-top:200px;
+            }
+            .footer .icp{
+                display:inline-block;
+                width:20px;
+                height:20px;
+                background:url("../../image/4.png");
+                background-position:-600px -96px;
+                position:relative;
+                top:3px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">hao123</a></li>
+            <li><a href="#">地图</a></li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">贴吧</a></li>
+            <li><a href="#">学术</a></li>
+            <li><a href="#">登陆</a></li>
+            <li><a href="#">设置</a></li>
+            <li>更多产品</li>
+        </ul>
+        <img src="../../image/1.gif" class="logo">
+        <div class="serch">
+            <input class="serch-word" type="text" name="keyword">
+            <span  class="serch-camera"></span>
+            <input class="serch-button" type="button" value="百度一下">
+        </div>
+        <div class="footer">
+            <img src="../../image/1.png">
+            <p class="site-name">百度</p>
+            <ul>
+                <li><a href="#">把百度设为主页</a></li>
+                <li><a href="#">关于百度</a></li>
+                <li><a href="#">About Baidu</a></li>
+                <li><a href="#">百度推广</a></li>
+            </ul>
+             <p>
+                &copy;2018 Baidu
+                <a href="#">使用百度前必读</a>
+                <a href="#">意见反馈</a>
+                 京ICP证030173号
+                 <span class="icp"></span>
+                 <a href="#">京公网安备11000002000001号</a>
+                 <span class="police"></span>
+            </p>
+        </div>
+    </body>
+</html>
