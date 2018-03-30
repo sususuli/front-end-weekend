@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>css选择器的练习</title>
+    <style>
+        .test1 * {
+            border :1px dotted black; 
+        }
+        .test2 p {
+            color:red;
+        }
+        ul{
+            color:blue;
+        }
+        .test3 a:link {
+            color:lightblue;
+        }
+        .test3 a:visited {
+            color:pink;
+        }
+        .test3 a:hover {
+            color:red;
+        }
+        .test3 a:active {
+            color:orange;
+        }
+        .test4 a+p{
+            color:red;
+        }
+        .test5 > ul {
+            color:red;
+        }
+        .test6 a ~ p{
+            color:red;
+        }
+        .test7 a[title]{
+            color:green;
+        }
+        .test8 a[href="#"]{
+            color:red;
+        }
+        .test9 a[href*="sss"]{
+            color:red;
+        }
+        .test9 a[href^="http"]{
+            color:blue;
+        }
+        .test9 a[href$=".jpg"]{
+            color:green;
+        }
+        .test10 a[data-filetype="image"]{
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">
+        <p>这是测试一个段落</p>
+        <ul>
+            <li>李易峰真帅啊啊啊</li>
+            <li>李易峰真帅嘿嘿嘿</li>
+            <li>李易峰真帅呵呵呵</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="test2">
+        <p>这是测试的第二个段落</p>
+        <ul>
+            <li>今天天气好晴朗</li>
+            <li>处处好风光</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="test3">
+        <p>这是测试的<a href="#">第二个段落这是测试的第二</a>个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落这是测试的第二个段落</p>
+    </div>
+    <div class="test4"> 
+        <a href="#">今天天气好晴朗</a>
+        <p>这是紧跟在a后的第一个段落</p>
+        <p>这个段落不会变红</p>
+    </div>
+    <hr>
+    <div class="test5">
+        <ul>
+            <li>李易峰真帅啊啊啊</li>
+                <ul>
+                    <li>这个不是直接后代</li>
+                </ul>
+            <li>李易峰真帅嘿嘿嘿</li>
+            <li>李易峰真帅呵呵呵</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="test6"> 
+        <a href="#">今天天气好晴朗</a>
+        <p>这是紧跟在a后的第一个段落</p>
+        <p>这是a的兄弟段落，也将被选中</p>
+    </div>
+    <hr>
+    <div class="test7">
+        <a href="#" title="超链接标题">这是带有title的超链接，它将被选中</a>
+        <br>
+        <a href="#">这个不带title的超链接，将不会受影响</a>
+    </div>
+    <br>
+    <div class="test8">
+        <a href="#">这个是href指向#的超链接，它将被选中</a>
+        <br>
+        <a href="*">这个是href指向*的超链接，将不会受影响</a>
+    </div>
+    <hr>
+    <div class="test9">
+        <a href="http://www.baidu.com">这个是href前缀带有http的超链接，它将被选中</a>
+        <br>
+        <a href="F:\html学习\image\10.jpg">这个是href后缀是jpg的超链接，它也会被选中</a>
+        <br>
+        <a href="sssddff">这个是href中带有sss的超链接</a>
+    </div>
+    <br>
+    <div class="test10">
+        <a href="F:\html学习\image\1.png" data-filetype="image">这个是href后缀是png的超链接，它会被选中</a>
+    </div>
+</body>
+</html>
