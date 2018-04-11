@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>定位对文档流的影响</title>
+	<style>
+		.box{
+            height:400px;
+            width:600px;
+            margin-top:20px;
+            background-color:lightblue;
+        }
+        
+        .in{
+            height: 200px;
+            width: 100px;
+            background-color:pink;
+        }
+        
+        .blue{
+            background-color:blue;
+        }
+        
+        
+        
+        .position-test1 .in{
+            position:static;
+            
+        }
+        
+        .position-test2 .in{
+            position:relative;
+            
+        }
+        
+        .position-test3 .in{
+            position:absolute;
+            
+        }
+        
+        .position-test4 .in{
+            position:fixed;
+            
+        }
+        
+        .position-test5 .out{
+            display:inline;
+            background-color:white;
+            font-size:100px;
+            line-height:200px;
+            position:relative;
+        }
+        
+        .position-test5 .in{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        
+        .position-test6{
+            position:relative;
+        }
+        
+        .position-test6 .in{
+            position:absolute;
+            right:-20px;
+            top:-20px;
+        }
+        
+        .position-test7{
+            position:relative;
+            font-size:0;<!--两个div之间的间隔消失-->
+        }
+        
+        .position-test7 .in{
+            display:inline-block;
+            
+        }
+        
+        .position-test7 .in2{
+            display:inline-block;
+            background-color:red;
+            position:absolute;
+            font-size:20px;
+        }
+        
+        
+        
+        .position-test7 .in3{
+            display:inline-block;
+            background-color:red;
+            position:absolute;
+            font-size:20px;
+            margin-left:-20px;
+        }
+        
+        .position-test8{
+            position:relative;
+            padding:50px;
+        }
+        
+        .position-test8 .in{
+            position:absolute;
+            left:50px;<!--设置为absolute之后就可以设置left，top，right，和bottom的值了-->
+            margin-left:50px;<!--在left的基础上进行margin-left-->
+            
+        }
+        
+        .position-test9{
+            position:relative;
+            overflow:auto;
+            
+        }
+        
+        .position-test9 .in{
+            position:absolute;
+            left:50px;
+            top:50px;    
+        }
+        
+        .position-test9 .in2{
+            height:600px;
+            background-color:red;
+        }
+        
+        .float-test{
+            position:relative;
+        }
+        
+        .float-test .out {
+            float: left;
+            width: 90%;
+        }
+
+        .float-test .in {
+            margin: 10px;
+            float: left;
+        }
+        
+        .float-test .in2 {
+            position:absolute;
+            top:50px;
+            left:50px;
+            background-color:red;
+        }
+        
+        .test1{
+            position:relative;
+            background-color:red;
+        }
+        
+        .test11{
+            background-color:green;
+            position:absolute;
+        }
+        
+        
+        
+        .position-test10 .out{
+            position:absolute;
+        }
+        
+        .position-test10 .in{
+            position:absolute;
+            left: 50px;
+            top: 0;
+        }
+        
+        .absolute-test{
+            position:relative;
+        }
+        
+        .absolute-test .out{
+            position:absolute;
+            background-color:yellow;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        .absolute-test .in{
+            position:absolute;
+            height:50%;
+            width:50%;
+            bottom:0;
+            top:0;
+            left:0;
+            right:0;
+            margin:auto auto;
+            
+        }
+        
+        .absolute-test2 {
+            text-align: center;
+            position:relation;
+        }
+
+        .absolute-test2 .in {
+            position:absolute;
+            
+        }
+        
+        .absolute-test3{
+			position:relative;
+			overflow:hidden;
+			height:100px;
+		}
+		
+		.absolute-test3 .in{
+			position:absolute;
+			height:300px;
+		}
+        
+        .absolute-test4{
+			position:relative;
+			height:100px;
+            width:200px;
+		}
+		
+        .absolute-test4 .out{
+			overflow:hidden;
+		}
+        
+		.absolute-test4 .in{
+			position:absolute;
+			height:200px;
+            width:300px;
+		}
+	</style>
+</head>
+<body>
+    <h2>定位对文档流的影响</h2>
+	<div class="position-test1 box">
+        <div class="in">static</div>
+        <p>苏慧慧苏慧慧苏慧慧</p>
+    </div>
+    <div class="position-test2 box">
+        <div class="in">relative</div>
+        <p>苏慧慧苏慧慧苏慧慧</p>
+    </div>
+    <div class="position-test3 box">
+        <div class="in">absolute</div>
+        <p>苏慧慧苏慧慧苏慧慧</p>
+    </div>
+    <div class="position-test4 box">
+        <div class="in">fixed</div>
+        <p>苏慧慧苏慧慧苏慧慧</p>
+    </div>
+    <h2>absolute的祖先元素为行内元素，包含块的边界为内容区域的边界</h2>
+    <div class="position-test5 box">
+        <div class="out">
+            111111
+            <div class="in"></div>
+        </div>
+    </div>
+    
+    <h2>定位的偏移是负值</h2>
+    <div class="position-test6 box">
+        
+        <div class="in">
+            我不管我最美
+        </div>
+        
+    </div>
+    
+    <h2>absolute定位如果 offset 为 auto ，默认在原始位置</h2>
+    <div class="position-test7 box">
+        
+        <div class="in"></div>
+        <div class="in2">啦啦乐乐乐啦啦</div>
+        <div class="in blue"></div>
+        
+    </div>
+    
+    <h2>absolute 定位如果 offset 为 auto ，默认在原始位置，可用负 margin 针对原始位置做偏移</h2>
+    <div class="position-test7 box">
+        
+        <div class="in"></div>
+        <div class="in3">啦啦乐乐乐啦啦</div>
+        <div class="in blue"></div>
+        
+    </div>
+    
+    <h2>absolute 指定偏移，以及复杂 auto 计算</h2>
+    <div class="position-test8 box">
+        
+        <div class="in"></div>
+        
+        
+    </div>
+    
+    <h2>absolute 的随滚动条滚动</h2>
+    <div class="position-test9 box">
+        
+        <div class="in">它是absolute了脱离了文档流，所以box的大小就是in2的大小（in2>box）</div>
+        <div class="in2"></div>
+        
+    </div>
+    <hr>
+    <div class="test1">
+        <div class="test11">绝对定位：包裹性  元素绝对定位后，会为其后代元素建立一个包含块。且若该绝
+            对定位元素不设置宽度，宽度由内容撑开。
+        </div>
+    </div>
+    <hr>
+    <h2>浮动包含块自动延伸，包含住所有包含块,out是浮动块，它包含了三个in浮动块，它会自动延伸包含住所有浮动块</h2>
+    <div class="float-test box">
+        
+        <div class="out blue">
+            <div class="in"></div>
+            <div class="in"></div>
+            <div class="in"></div>
+        </div>
+        
+    </div>
+    
+    <h2>绝对定位的包含块并不会包含后代的定位元素，只是作为后代定位元素的定位父级</h2>
+    <div class="position-test10 box">
+        
+        <div class="out blue">
+            aaaaaaaaaaaaaa
+            <div class="in"></div>
+            
+        </div>
+        
+    </div>
+    
+    <h2>绝对定位后浮动会消失</h2>
+    <div class="float-test box">
+        
+        <div class="out blue">
+            <div class="in">1</div>
+            <div class="in in2">2</div>
+            <div class="in">3</div>
+        </div>    
+    </div>
+    
+    <h2>绝对定位 偏移特性 absolute 的四个偏移量同时设置，让元素拉伸，拉伸后子元素可设置高度，且垂直 margin auto 可用</h2>
+    <div class="absolute-test box">
+        
+        <div class="out">
+            <!--absolute 的四个偏移量同时设置，让元素拉伸 out div-->
+            <div class="in">
+                <!--子元素设置高度百分比是相对于父元素来说的-->
+            </div>   
+        </div>    
+    </div>
+    
+    <h2>绝对定位 对居中行元素的影响</h2>
+    <div class="absolute-test2 box">
+        <span class="in">Hello Word</span>
+    </div>
+    
+    <h2>绝对定位对overflow的影响，overflow同样会隐藏position：absolute的子元素</h2>
+	<div class="absolute-test3 box">
+		<div class="in"></div>
+	</div>
+    
+    <h2>overflow:hidden 有时针对 absolute 元素会失效，因为它不是 absolute 的定位父元素</h2>
+    <div class="absolute-test4 box">
+        <div class="out">
+            <div class="in"></div>
+        </div>
+    </div>
+</body>
+</html>
