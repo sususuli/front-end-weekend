@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>定位概述</title>
+	<style>
+		.test1{
+			height:100px;
+			width:200px;
+			background-color:lightgreen;
+			padding-left:20px;
+			padding-top:20px;
+		}
+		
+		.test2{
+			height:100px;
+			width:200px;
+			background-color:lightblue;
+			padding-left:20px;
+			padding-top:20px;
+			margin-top:20px;
+		}
+		
+		.test3{
+			height:100px;
+			background-color:yellow;
+			padding-left:20px;
+			padding-top:20px;
+			margin-top:20px;
+		}
+		
+		.test3 .test31{
+			padding:10px;
+			background-color:blue;
+			<!--通过padding设置行内框的高度-->
+		}
+        
+        .test3 .test32{
+			padding:20px;
+			background-color:green;
+			<!--通过padding设置行内框的高度-->
+		}
+        
+        
+	</style>
+</head>
+<body>
+	<div class="test1">苏慧慧是我</div>
+	<div class="test2">我是苏慧慧</div>
+	<div class="test3">
+        <span class="test31">你那么美 诶 你那么美</span>
+        <span class="test32">你那么美 哦 你那么美</span>
+       
+	</div>
+</body>
+</html>
