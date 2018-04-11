@@ -42,7 +42,7 @@
             .serch-word{
                 width:500px;
                 height:30px;
-                border-right:0;
+                <!--border-right:0;-->
                 margin-right:-5px;
             }
             .serch-camera{
@@ -56,13 +56,17 @@
                 background:#fff url(../../image/2.png);
                 no-repeat;
             }
+            .serch-camera:hover {
+                background-position: 0 -20px;
+            }
             .serch-button{
-                height:35px;
-                <!--margin-left:-5px;text和button的间距-->
-                border:0;
+               width:100px;
+                height:36px;
+                margin-left:-8px;
+                vertical-align:bottom;
                 background-color:#3385ff;
                 color:#fff;
-                vertical-align:bottom;
+                border:0;
             }
             .footer{
                 margin-top:200px;
@@ -91,8 +95,17 @@
                 display:inline-block;
                 width:20px;
                 height:20px;
-                background:url("../../image/4.png");
+                background:url("../../image/3.png");
                 background-position:-600px -96px;
+                position:relative;
+                top:3px;
+            }
+            .footer .police{
+                display:inline-block;
+                width:20px;
+                height:20px;
+                background:url("../../image/3.png");
+                background-position:-623px -96px;
                 position:relative;
                 top:3px;
             }

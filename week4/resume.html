@@ -2,288 +2,156 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>个人简历</title>
+    <title>个人</title>
     <style>
-        <!--body{
-            background-color: #ECECF0;
+        body{
+            background-color:#EBECF1;
+        }
+    
+        .container{
+            width:90%;
+            position:relative;    
         }
         
-        .aside,.footer{
+        .aside{
+            width:30%;
+            position:absolute;
+            top:0;
+            bottom:0;
+            background-color:#283848;
             color:white;
         }
         
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            min-width: 768px;
-            max-width: 1080px;
-            position:relative;
-        }
-        
-        .aside {
-            width: 30%;
-            position:absolute;
-            background-color: #283848;
-            top: 0;
-            bottom: 0;
-            box-sizing:border-box;
-        }
-        
-        .main {       
-            margin-left: 31%;
-            width: 69%;
-            
-        }
-        .aside .header{
-            
-            background-color: #16222E;
-            
-            
+        .main{
+            margin-left:31%;
         }
         
         .aside .header h1{
-            margin:0;
             text-align:center;
-            height: 100px;
-            line-height: 100px;
-        }
-        
-        .aside .portrait {
-            text-align: center;
-            background-color: #23313E;
-            height: 300px;
-        }
-        
-        .aside .portrait img{
-            margin-top: 10px;
-        }
-        
-        .footer{
-            background-color: #283848;
-            
-            
-        }
-        
-        .footer h1{
-            text-align:center;
+            height:100px;
+            line-height:100px;
+            background-color:#16222E;
             margin:0;
         }
         
-        .footer p{
-            padding-left:20px;
+        .aside .portrait{
+            text-align:center;
+            padding-top:20px;
+            background-color:#23313E;
+            height:200px;
         }
         
-        .footer img{
+        .aside .footer{
             padding-left:20px;
-            
+            list-style:none;
         }
         
-        .aside ul{
-            list-style: none;
-            padding-left:20px;
+        .aside .footer img{
+            margin-top:100px;
         }
         
-        .main .header{
+        .aside .footer ul{
+            list-style:none;
+            padding-left:0;
+        }
+        
+        .main .main-header{
             overflow:hidden;
+            color:white;
         }
         
-        .main .personal-details{
+        .main .main-header .personal-details{
             float:left;
             width:49%;
-            height:200px;
-            position: relative;
-            background-color: #DF4E3D;
-        }
-        
-        .main .contact-details{
-            float:left;
-            width:49%;
-            height:200px;
-            margin-left:2%;
-            background-color:#23B495;
-            position: relative;
-        }
-        
-        .main .experience,
-        .main .education {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #fff;
-            overflow:hidden;
+            padding-left:20px;
+            box-sizing:border-box;
+            background-color:#DF4E3D;
+            height:230px;
             position:relative;
-            }
-            
-        .experience .title,
-        .education  .title {
-            width:30%;
-            float:left;
         }
         
-        .experience .detail
-        .education  .detail
-        {
+        .main .main-header .contact-details{
+            float:left;
+            width:49%;
+            background-color:#23B495;
+            margin-left:2%;
+            padding-left:20px;
+            box-sizing:border-box;
+            height:230px;
+            position:relative;
+        }
+        
+        .main .main-header .contact-details ul{
+            list-style:none;
+        }
+        
+        .main .main-header .personal-details ul{
+            list-style:none;
+        }
+        
+        .main .experience{
+            overflow:hidden;
+            background-color:#FFFFFF;
+            margin-top:20px;
+            padding-left:20px;
+            position:relative;
+        }
+        
+        .main .experience .item .title{
+            float:left;
+            width:30%;
+            
+        }
+        
+        .main .experience .item .detail{
+            float:left;
             width:70%;
-            float:left;    
+        }
+        
+        .main .education{
+            overflow:hidden;
+            background-color:#FFFFFF;
+            margin-top:20px;
+            padding-left:20px;
+            position:relative;
+        }
+        
+        .main .education .item .title{
+            float:left;
+            width:30%;
+            
+        }
+        
+        .main .education .item .detail{
+            float:left;
+            width:70%;
         }
         
         .main .honor{
             overflow:hidden;
             background-color:#398FCC;
-            margin: 20px 0 0 0;
             padding-left:20px;
-            box-sizing:border-box;
+            color:white;
+            margin-top:20px;
             position:relative;
         }
         
         .main .honor .title{
             float:left;
             width:50%;
-            list-style: disc;
         }
         
         .main .honor .detail{
             float:left;
             width:50%;
-            list-style: disc;
-        }-->
+        }
         
-        
-        body {
-        background-color: #EBECF1;
-    }
-    
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-    .container {
-        width: 90%;
-        min-width: 768px;
-        max-width: 1080px;
-        margin: 0 auto;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .aside {
-        box-sizing: border-box;
-        width: 30%;
-        background-color: #283848;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-    }
-    
-    .main {        
-        width: 70%;
-        margin-left: 31%;
-    }
-    
-    .aside .header {
-        background-color: #16222E;
-    }    
-    
-    .aside .header h1 {
-        height: 100px;
-        line-height: 100px;
-        text-align: center;
-        margin: 0;
-    }    
-    
-    .aside .portrait {
-        background-color: #23313E;
-        height: 200px;
-        text-align: center;
-    }
-    
-    .aside .portrait img {
-        margin-top: 20px;
-        width: 150px;
-    }
-    
-    .aside .self-intro {
-        padding: 20px;
-    }
-    
-    .aside .qrcode {
-        margin-top: 50px;
-    }    
-    
-    .main-header {
-        overflow: hidden;
-    }
-    .main-header .personal-details,
-    .main-header .contact-details {        
-        color: #fff;
-        float:left;
-        width: 49%;
-        height: 230px;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    .main-header .personal-details {
-        background-color: #DF4E3D;
-    }
-    
-    .main-header .contact-details {    
-        background-color: #23B495;
-        margin-left: 2%; 
-    }
-    
-    .main .personal-details,
-    .main .contact-details,
-    .main .experience,
-    .main .education,
-    .main .honor {
-        position: relative;
-    }
-    
-    .main .icon {
-        position: absolute;
-        width: 80px;
-        top: 20px;
-        right: 20px;
-    }
-    
-    .main .experience,
-    .main .education {
-        margin: 40px 0;
-        padding: 20px;
-        background-color: #fff;
-        overflow: hidden;
-    }
-    
-    .main .experience .title,
-    .main .education .title {
-        width: 30%;
-        float: left;
-    }
-    
-    .main .experience .detail,
-    .main .education .detail {
-        width: 70%;
-        float: left;
-    }
-    
-    .main .honor {
-        background-color: #398FCC;
-        color: #fff;
-        margin: 20px 0 0 0;
-        padding: 20px;
-        overflow: hidden;
-    }
-    
-    .main .honor ul {
-        box-sizing: border-box;
-        width: 50%;
-        float: left;
-        padding-left: 50px;
-        list-style: disc;
-    }
-        
+        .main .icon{
+            position:absolute;
+            width:80px;
+            top:20px;
+            right:20px;
+        }
     </style>
 </head>
 <body>
@@ -297,7 +165,7 @@
                 <p>苏慧慧</p>
             </div>
             <div class="footer">
-                <h1>自我介绍</h1>
+                <h2>自我介绍</h2>
                 <p>朱自清（1898年11月22日—1948年8月12日），原名自华，号秋实，后改名自清，字佩弦。中国近代散文家、诗人、学者、民主战士。 [1]原籍浙江绍兴，出生于江苏省东海县（今连云港市东海县平明镇），后随祖父、父亲定居扬州，自称“我是扬州人”。1916年中学毕业并成功考入北京大学预科。1919年开始发表诗歌。1928年第一本散文集《背影》出版。 [2-3] 1932年7月，任清华大学中国文学系主任。1934年，出版《欧游杂记》和《伦敦杂记》。1935年，出版散文集《你我》。</p>
                 <img src="../../image/10.jpg">
                 <ul>
@@ -310,6 +178,7 @@
        <div class="main">
             <div class="main-header">
                 <div class="personal-details">
+                    <img src="../../image/icon1.png" alt="图片一" class="icon">
                     <h2>基本资料</h2>
                     <ul>
                         <li>出生年月：1989 年 5 月</li>
@@ -320,6 +189,7 @@
                     </ul>
                 </div>
                 <div class="contact-details">
+                <img src="../../image/icon2.png" alt="图片二" class="icon">
                      <h2>联系方式</h2>
                     <ul>
                         <li>手机：17853501816</li>
@@ -329,6 +199,7 @@
                 </div>
             </div>
             <div class="experience">
+                <img src="../../image/icon3.png" alt="图片三" class="icon">
                 <h2>项目经历</h2>
                 <div class="item">
                     <div class="title">
@@ -352,6 +223,7 @@
                 </div>
             </div>
             <div class="education">
+               <img src="../../image/icon4.png" alt="图片四" class="icon">
                <h2>教育经历</h2>
                 <div class="item">
                     <div class="title">
@@ -373,6 +245,7 @@
                 </div>
             </div>
             <div class="honor">
+                <img src="../../image/icon5.png" alt="图片五" class="icon">
                 <h2>获奖经历</h2>
                 <div class="title">
                     <ul>
