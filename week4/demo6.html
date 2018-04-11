@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>css实现水平居中</title>
+    <style>
+        .out1{
+            height:200px;
+            width:600px;
+            background-color:blue;
+        }
+        
+        .in1{
+            height:100px;
+            width:300px;
+            background-color:green;
+            margin:0 auto;
+            text-align:center;
+        }
+        
+        .out2{
+            height:200px;
+            width:600px;
+            background-color:blue;
+            display:flex;
+            flex-direction:column;
+        }
+        
+        .in2{
+            height:100px;
+            width:300px;
+            background-color:green;
+            align-self:center;
+        }
+        
+        .out3{
+            height:200px;
+            width:600px;
+            background-color:blue;
+            display:table-cell;
+        }
+        
+        .in3{
+            height:100px;
+            width:300px;
+            background-color:green;
+            margin-left:150px;
+        }
+        
+        .box{
+            position:relative;
+        }
+        
+        .out4{
+            height:200px;
+            width:600px;
+            background-color:blue;
+        }
+        
+        .in4{
+            height:100px;
+            width: 300px;
+            background-color:green;
+        }
+        
+        .out5{
+            height:200px;
+            width:600px;
+            background-color:blue;
+            display:inline-block;
+        }
+        
+        .in5{
+            height:100px;
+            width: 300px;
+            background-color:green;
+            margin:0 auto;
+            text-align:center;
+        }
+        
+        .out6{
+            height:200px;
+            width:600px;
+            background-color:blue;
+            position:relative;
+        }
+        
+        .in6{
+            height:100px;
+            width: 300px;
+            background-color:green;
+            float:left;
+            margin-left:150px;
+        }
+        
+        .out8{
+            height:200px;
+            width:600px;
+            background-color:blue;
+            position:absolute;
+        }
+        
+        .in8{
+            height:100px;
+            width:300px;
+            background-color:green;
+            margin-left:150px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>子元素 margin:0 auto text-align:center</h2>
+    <div class="out1">
+        <div class="in1"></div>
+    </div>
+    <h2>父元素 display:flex; flex-direction:column（垂直为row）;子元素 align-self:center</h2>
+    <div class="out2">
+        <div class="in2"></div>
+    </div>
+    <h2>父元素 display:table-cell; 子元素 margin-left=(父元素宽度-子元素宽度)/2</h2>
+    <div class="out3">
+        <div class="in3"></div>
+    </div>
+    <h2>子元素 宽度不确定，width:fit-content;margin:0 auto;text-align:center;为啥不起作用</h2>
+    <div class="out4">
+        <div class="in4"></div>
+    </div>
+    <h2>父元素:display:inline-block 子元素 margin:0 auto;text-align:center;</h2>
+    <div class="out5">
+        <div class="in5"></div>
+    </div>
+    <h2>父元素:position:relative; 子元素 float:left;margin-left:(父元素宽度-子元素宽度)/2</h2>
+    <div class="out6">
+        <div class="in6"></div>
+    </div>
+    <h2>父元素 position:absolute; 子元素 margin-left=(父元素宽度-子元素宽度)/2</h2>
+    <div class="box">
+        <div class="out8">
+            <div class="in8"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
