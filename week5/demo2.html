@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    
+        .tab-container .tab-menu{
+            float: left;
+            background: #1ABC9C;
+           
+            
+        }
+        
+        .tab-menu ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tab-menu li {
+            list-style: none;
+            
+        }
+        
+        .tab-menu li a {
+            display: block;
+            text-decoration: none; 
+            width: 80px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        
+        .tab-container .tab-content{
+            float: left;
+            overflow: hidden;
+            margin-left: 10px;
+            }
+            
+        .tab-menu ul li a.active {
+            background-color: white;
+            color: #1ABC9C;
+        }
+    </style>
+</head>
+<body>
+    <section class="tab-container">
+        <div class="tab-menu">
+            <ul>
+                <li><a href="#haha" id="tab-haha">哈哈</a></li>
+                <li><a href="#xixi" id="tab-xixi">嘻嘻</a></li>
+                <li><a href="#miaomiao" id="tab-miaomiao">喵喵</a></li>
+                <li><a href="#moumou" id="tab-moumou">某某</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <article id="haha">哈哈啊哈哈</article>
+            <article id="xixi">嘻嘻嘻嘻嘻嘻嘻</article>
+            <article id="miaomiao">喵喵密密麻麻</article>
+            <article id="moumou">某某某某某某</article>
+        </div>
+    </section>
+    <script>
+        var tab_haha = document.getElementById("tab-haha");
+        var tab_xixi = document.getElementById("tab-xixi");
+        var tab_miaomiao = document.getElementById("tab-miaomiao");
+        var tab_moumou = document.getElementById("tab-moumou");
+        
+        var haha = document.getElementById("haha");
+        var xixi = document.getElementById("xixi");
+        var miaomiao = document.getElementById("miaomiao");
+        var moumou = document.getElementById("moumou");
+        
+        tab_haha.className = "active";
+        
+        haha.style.display = "block";
+        xixi.style.display = miaomiao.style.display = moumou.style.display ="none"; 
+        
+        function hideAll(){
+            tab_haha.className = tab_xixi.className = tab_miaomiao.className = tab_moumou.className ="";
+            
+            haha.style.display = xixi.style.display = miaomiao.style.display = moumou.style.display ="none"; 
+        }
+        
+        tab_haha.onclick = function(){
+            hideAll();
+            tab_haha.className = "active";
+            haha.style.display = "block";
+        }
+        
+        tab_xixi.onclick = function(){
+            hideAll();
+            tab_xixi.className = "active";
+            xixi.style.display = "block";
+        }
+        
+        tab_miaomiao.onclick = function(){
+            hideAll();
+            tab_miaomiao.className = "active";
+            miaomiao.style.display = "block";
+        }
+        
+        tab_moumou.onclick = function(){
+            hideAll();
+            tab_moumou.className = "active";
+            moumou.style.display = "block";
+        }
+    </script>
+</body>
+</html>
