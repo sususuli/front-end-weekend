@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>左右布局</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        
+        .container {
+            width: 90%;
+            overflow: hidden;
+            margin: 20px; auto;
+            padding-right: 310px;
+            box-sizing: border-box;
+            position: relative;
+            
+        }
+        
+        .left {
+            
+            background-color: rgba(255, 0, 0, .1);
+            
+        }
+        
+        .left p {
+            margin: 0;
+        }
+        
+        .right {
+            background-color: yellow;
+            width:300px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .header {
+            background-color: #222;
+            overflow: hidden;
+            line-height:50px;
+            margin: 0 auto;
+        }
+        
+        .menu {
+            list-style: none; 
+            padding:0;
+            width:80%;
+            margin: auto;
+        }
+        
+        .menu li {
+            float: left;
+            
+        }
+        
+        .menu a:link,
+        .menu a:visited {
+           color:white;
+           text-decoration: none;
+           display: block;
+           width: 80px;
+           text-align: center;
+           
+        }
+        
+        .menu a:hover,
+        .menu a:active {
+            
+            color: yellow;
+            background-color: #000;
+        }
+        
+        #top {
+            position: fixed;
+            z-index: 5000;
+            bottom: 50px;
+            right: 50px;
+            height: 60px;
+            width: 60px;
+            border: 2px solid rgba(255, 255, 255, .2);
+            box-sizing: border-box;
+            padding-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 1s;
+        }
+        
+        #top::after{
+            content:'';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top:5px;
+            border-style: solid;
+            border-color: transparent transparent #FFF transparent;
+            border-width: 8px;
+            left: 50%;
+            margin-left: -8px;
+        }
+        
+        #top.show{
+            opacity: 1;
+        }
+        
+        .header1 {
+            
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        .menu1 {
+            background-color: #27AE60;
+            height:50px;
+        }
+        
+        .menu1 li {
+            display: block;
+            float: left;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+            list-style: none;
+        }
+        
+        .menu1 a {
+           display: block;
+           color:white;
+           text-decoration: none;
+           width: 80px;
+           line-height: 50px;
+           text-align: center;
+        }
+        
+        .menu1 li ul {
+            display: none;
+            position: absolute;
+            top: 50px;
+            background: #2ecc71;
+            padding: 0;
+        }
+        
+        .menu1 li:hover ul {
+            display: block;
+        }
+        
+        .menu1 li ul li {
+            width:100%;
+            border-right: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+        
+        .menu1 li:hover {
+            background-color: rgba(0, 0, 0, .2);
+        }
+        
+        /*.header1 {
+            margin: 0;
+            padding: 0;
+            
+        }
+        
+        .menu1 {
+            height: 50px;
+            background-color: #27AE60;
+        }
+        
+        .menu1 li{
+            float: left;
+            list-style: none;
+            display: block;
+            border-right: 2px solid rgba(255, 255, 255, .3);
+            position: relative;
+        }
+        
+        .menu1 li a {
+            display: block;
+            line-height: 50px;
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .menu1 li ul {
+            display: none;
+            position: absolute;
+            top: 50px;
+            background-color: #2ECC71;
+            padding: 0;
+        }
+        
+        .menu1 li:hover ul {
+            display: block;
+        }
+        
+        .menu1 li ul li {
+            width: 100%;
+            border-right: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+        
+        .menu1 li ul li a {
+           line-height: 50px;
+           font-size: 18px;
+        }
+        
+        .menu1 li:hover {
+            background-color: rgba(0, 0, 0, .2);
+        }*/
+        
+        #tab-comtainer {
+            background-color: #FFF;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .15);
+        }
+        
+        #tab-nav  {
+            background: #1abc9c;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 50px;
+        }
+        
+        #tab-nav li {
+            display: inline-block;    
+        }
+        
+        #tab-nav li a {
+            display: block;
+            /* 必须，否则背景色不会占满*/
+            color: #fff;
+            text-decoration: none;
+            width: 100px;
+            
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        #tab-content {
+            padding: 25px;
+        }
+        
+        #tab-nav li a.active {
+            color: #1abc9c;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul class="menu">
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="left">
+            <p>我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+           我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真</p>
+        </div>
+        <div class="right">
+           落叶堆积了好几层 而我跺过青春 
+           听见 前世谁在泪语纷纷 
+           一次缘份结一次绳 我今生还在等 
+           一世 就只能有一次的 认真
+        </div>
+    </div>
+    <div class="header1">
+        <ul class="menu1">
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a>
+                <ul>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单</a>
+                <ul>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                    <li><a href="#">菜单</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">菜单</a></li>
+        </ul>
+    </div>
+    <div id="top">Top</div>
+    <section id="tab-comtainer">
+        <ul id="tab-nav">
+            <li><a href="#weather" id="nav-weather">天气</a></li>
+            <li><a href="#sport" id="nav-sport">运动</a></li>
+            <li><a href="#travel" id="nav-travel">旅行</a></li>
+            <li><a href="#sleep" id="nav-sleep">睡觉</a></li>
+        </ul>
+        <div id="tab-content">
+            <article id="weather">
+                <p>     上周日的天气，总算没有让大家失望。蓝天加艳阳，再加上不冷不热的温度，这才是四月最美的样子。周一，阳光和工作也很配哦。未来几天，气温和大家一起在岗位上“奋斗”。　  春如四季，说的就是成都没错了。上周六，黑云压城，冷风冷雨，秋裤都要穿上了，然而，周日，老天瞬间“变脸”，又是蓝天，又是太阳，20℃左右的天气，伴着微风，一派春暖人间的和谐画面。接受到好天气的讯号，成都近郊都被出城的市民“攻占”了。也许是一开始发力有些过猛，到了午后，太阳后劲有些不足，云层聚拢，让外出踏青的小伙伴有些意犹未尽。太阳还没晒够?短袖还没来得及穿?下周，有的是机会。4月15日7时10分，四川省气象台已解除了11日16时发布的寒潮蓝色预警，冷空气后，温暖归来，预计15-17日盆地以多云间晴天气为主，气温显著回升。据成都市气象台预报，16日，阳光明媚，之后两天，湿度增加，云层堆积，阳光没有那么灿烂，但温度稳步攀升，最高温度可达29℃。 （记者 吴冰清）
+                </p>
+            </article>
+            <article id="sport">
+                <p>        运动，一种涉及体力和技巧的由一套规则或习惯所约束的活动，通常具有竞争性。物布时空永不           均产生了普遍运动，普遍的运动生灭着万事万物。没有不运动的物件，也没有能离开物件的运动。运动具守恒性，即运动既不能被创造又不能被消灭，其具体形式则是多样的并且能互相转化，在转化中运动总量不变。在几何中，刚性运动被描述为：平面到其自身的一个映射且使任意两点A,B的距离与其象A‘=M(A),B'=M(B)的距离相同。哲学上，运动的定义：物在时空中的线性迁移。
+                </p>
+            </article>
+            <article id="travel">
+                <p>    旅行，指远行；去外地办事或游览。去外地行走。不同于旅游。
+                       旅行和旅游的区别就在于：旅行是在观察身边的景色和事物，行万里路，读万卷书，相对于是指个人，是行走。旅游是指游玩，通常是团体出行，在时间上是很短暂的。旅游就是旅行游览活动。它是一种复杂的社会现象，旅行要涉及到社会的政治、经济、文化、历史、地理、法律等各个社会领域。旅游也是一种娱乐活动，任何去外地游玩都可以算。世界旅游组织指旅行的定义是某人出外最少离家55英里（88.5千米）。
+                </p>
+            </article>
+            <article id="sleep">
+                <p>    睡觉，一般是指人类睡眠，是人类不可缺少的一种生理现象。人的一生中，睡眠占了近1/3的时间，它的质量好坏与人体健康与否有密切关系，由此可见睡眠对每一个人是多么重要。从某种意义上说，睡眠的质量决定着生活的质量。可是一个人为什么要睡眠？这个问题一直是科学家想要彻底解决的问题。最近，据英国《新科学家》杂志报道，科学家们针对睡眠的原因提出了几种说法，从养精蓄锐的浅显理论到涉及记忆处理的复杂理论，都对人类的睡眠进行了全面的探讨。
+                </p>
+            </article>
+        </div>
+    </section>
+    <script>
+        var nav = document.getElementById("top");
+        window.onscroll = function(){
+            scroll = document.body.scrollTop;
+            if(scroll>200){
+                nav.className = "show";
+            }else{
+                nav.className = "";
+            }
+        }
+        nav.onclick = function(){
+            document.body.scrollTop=0;
+        }
+    </script>
+    <script>
+        (function(){
+        var nav_weather = document.getElementById("nav-weather");
+        var nav_sport = document.getElementById("nav-sport");
+        var nav_travel = document.getElementById("nav-travel");
+        var nav_sleep = document.getElementById("nav-sleep");
+        
+        var weather = document.getElementById("weather");
+        var sport = document.getElementById("sport");
+        var travel = document.getElementById("travel");
+        var sleep = document.getElementById("sleep");
+        
+        sport.style.display = "none";
+        travel.style.display = "none";
+        sleep.style.display = "none";
+        nav_weather.className = 'active';
+        
+        function hideAll(){
+           nav_weather.className = nav_sport.className = nav_travel.className = nav_sleep.className="";
+           weather.style.display = sport.style.display = travel.style.display = sleep.style.display = "none";
+        }
+        
+        nav_weather.onclick = function(){
+            hideAll();
+            nav_weather.className = "active";
+            weather.style.display="block";
+        }
+        
+        nav_sport.onclick = function(){
+            hideAll();
+            nav_sport.className = "active";
+            sport.style.display="block";
+        }
+        
+        nav_travel.onclick = function(){
+            hideAll();
+            nav_travel.className = "active";
+            travel.style.display="block";
+        }
+        
+        nav_sleep.onclick = function(){
+            hideAll();
+            nav_sleep.className = "active";
+            sleep.style.display="block";
+        }
+        })();
+        
+        
+        
+    </script>
+</body>
+</html>
