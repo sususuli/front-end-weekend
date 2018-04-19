@@ -247,7 +247,69 @@
             color: #1abc9c;
             background: #fff;
         }
+        
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        
+        #popup-content {
+            position: absolute;
+            z-index: 200;
+            width: 700px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            background: #FFF;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+            margin-left: -350px;
+            margin-top: -150px;
+            box-sizing: border-box;
+            padding-bottom: 20px;
+            text-align: center;
+            overflow: scroll;
+        }
+        
+        #popup-content h2 {
+            padding-bottom: 10px;  
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+        
+        #close {
+            border-radius: 4px;
+            border: 0;
+            background-color: #E74C3C;
+            color: white;
+            font-size: 21px;
+            cursor: pointer;
+            height: 45px;
+            line-height: 45px;
+            width: 135px;
+        }
+        
+        #close:hover {
+            background: #C0392B;
+        }
+        
+        #popup-bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 100;
+            background: rgba(0, 0, 0, .3);
+        }
+        #popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
+    <script src="jquery.min.js.下载"></script>
 </head>
 <body>
     <div class="header">
@@ -265,7 +327,7 @@
             <p>我想要带你去所有的地方落叶堆积了好几层 而我跺过青春 
            听见 前世谁在泪语纷纷 
            一次缘份结一次绳 我今生还在等 
-           一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
+           一世 就只能有<a href="#" class="link-popup">一次</a>的 认真落叶堆积了好几层 而我跺过青春 
            听见 前世谁在泪语纷纷 
            一次缘份结一次绳 我今生还在等 
            一世 就只能有一次的 认真落叶堆积了好几层 而我跺过青春 
@@ -420,7 +482,8 @@
         </ul>
         <div id="tab-content">
             <article id="weather">
-                <p>     上周日的天气，总算没有让大家失望。蓝天加艳阳，再加上不冷不热的温度，这才是四月最美的样子。周一，阳光和工作也很配哦。未来几天，气温和大家一起在岗位上“奋斗”。　  春如四季，说的就是成都没错了。上周六，黑云压城，冷风冷雨，秋裤都要穿上了，然而，周日，老天瞬间“变脸”，又是蓝天，又是太阳，20℃左右的天气，伴着微风，一派春暖人间的和谐画面。接受到好天气的讯号，成都近郊都被出城的市民“攻占”了。也许是一开始发力有些过猛，到了午后，太阳后劲有些不足，云层聚拢，让外出踏青的小伙伴有些意犹未尽。太阳还没晒够?短袖还没来得及穿?下周，有的是机会。4月15日7时10分，四川省气象台已解除了11日16时发布的寒潮蓝色预警，冷空气后，温暖归来，预计15-17日盆地以多云间晴天气为主，气温显著回升。据成都市气象台预报，16日，阳光明媚，之后两天，湿度增加，云层堆积，阳光没有那么灿烂，但温度稳步攀升，最高温度可达29℃。 （记者 吴冰清）
+                <p>     上周日的天气，总算没有让大家
+                失望。蓝天加艳阳，再加上不冷不热的温度，这才是四月最美的样子。周一，阳光和工作也很配哦。未来几天，气温和大家一起在岗位上“奋斗”。　  春如四季，说的就是成都没错了。上周六，黑云压城，冷风冷雨，秋裤都要穿上了，然而，周日，老天瞬间“变脸”，又是蓝天，又是太阳，20℃左右的天气，伴着微风，一派春暖人间的和谐画面。接受到好天气的讯号，成都近郊都被出城的市民“攻占”了。也许是一开始发力有些过猛，到了午后，太阳后劲有些不足，云层聚拢，让外出踏青的小伙伴有些意犹未尽。太阳还没晒够?短袖还没来得及穿?下周，有的是机会。4月15日7时10分，四川省气象台已解除了11日16时发布的寒潮蓝色预警，冷空气后，温暖归来，预计15-17日盆地以多云间晴天气为主，气温显著回升。据成都市气象台预报，16日，阳光明媚，之后两天，湿度增加，云层堆积，阳光没有那么灿烂，但温度稳步攀升，最高温度可达29℃。 （记者 吴冰清）
                 </p>
             </article>
             <article id="sport">
@@ -438,6 +501,32 @@
             </article>
         </div>
     </section>
+    <div id="popup">
+        <div id="popup-content">
+           <h2>假如生活护龙了你</h2>
+            <p>假如生活护龙了你</p>
+            <p>表吱声</p>
+            <p>表咋呼</p>
+            <p>表嘟囔</p>
+            <p>也表年息儿</p>
+            <p>更表哭丧个脸子</p>
+            <p>你从哪儿跌倒</p>
+            <p>就在哪儿爬一会儿</p>
+            <p>也表起来</p>
+            <p>一直往前顾应</p>
+            <p>像毛毛虫一样</p>
+            <p>顾应。。。顾应</p>
+            <p>一直顾应</p>
+            <p>总有一天</p>
+            <p>你会变成</p>
+            <p>有翅膀的</p>
+            <p>扑棱蛾子</p>
+            <p>到时候一抖搂翅膀</p>
+            <p>想他么怎么飞就怎么飞</p>
+            <button id="close">Close me</button>
+        </div>
+        <div id="popup-bg"></div>
+    </div>
     <script>
         var nav = document.getElementById("top");
         window.onscroll = function(){
@@ -497,10 +586,15 @@
             nav_sleep.className = "active";
             sleep.style.display="block";
         }
-        })();
-        
-        
-        
+        })();    
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('a.link-popup,#close,#popup-bg').click(function(e){
+                e.preventDefault();
+                $('#popup').toggleClass('show');
+            });
+        });
     </script>
 </body>
 </html>
