@@ -308,8 +308,61 @@
             visibility: visible;
             opacity: 1;
         }
+        
+        
+        
+        .collapse .item {
+            background-color: #8E44AD;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+        
+        .collapse .item h2 {
+            background-color: #8E44DD;
+            cursor: pointer;
+            position: relative;
+            height: 70px;
+            line-height: 70px;
+            text-indent: 30px;
+            font-size: 24px;
+            margin: 0;
+            transition: all .5s;
+        }
+        
+        .collapse .item h2::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 7px;
+            border-color: #FFF transparent transparent transparent;
+            position: absolute;
+            top: 35px;
+            right: 20px;
+        }
+        
+        .collapse .item h2:hover {
+            background-color: #6e208e;
+        }
+        
+        .collapse .item .content {
+            padding: 30px;
+            color: rgba(255, 255, 255, .85);
+        }
+        
+        .collapse .item h2.hide::after {
+            border-color: transparent #FFF transparent transparent;
+            top: 30px;
+            right: 22px;
+        }
+        
+        .collapse .item .content.hide {
+            display: none;
+        }
+        
+        
+        
     </style>
-    <script src="jquery.min.js.下载"></script>
+    <script src="jquery.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -527,6 +580,28 @@
         </div>
         <div id="popup-bg"></div>
     </div>
+    
+    <div class="collapse">
+        <div class="item">
+            <h2>起风了</h2>
+            <div class="content">
+                <p>我曾啊啊啊啊啊</p>
+            </div>
+        </div>
+        <div class="item">
+            <h2>起风了</h2>
+            <div class="content">
+                <p>我曾啊啊啊啊啊</p>
+            </div>
+        </div>
+        <div class="item">
+            <h2>起风了</h2>
+            <div class="content">
+                <p>我曾啊啊啊啊啊</p>
+            </div>
+        </div>
+    </div>
+    
     <script>
         var nav = document.getElementById("top");
         window.onscroll = function(){
@@ -588,13 +663,42 @@
         }
         })();    
     </script>
+    
     <script>
         $(document).ready(function(){
             $('a.link-popup,#close,#popup-bg').click(function(e){
+            
                 e.preventDefault();
                 $('#popup').toggleClass('show');
             });
         });
+    </script>
+    
+    <script>
+        (function () {
+            var titles = document.querySelectorAll('.collapse h2'),
+                items = document.querySelectorAll('.collapse .item');
+            function foldAll() {
+                for (var i = 0; i < titles.length; i++) {
+                    items[i].querySelector('.content').className = 'content hide';
+                    titles[i].className = 'hide';
+                }
+            }
+            function openPanel(panel) {
+                var targetClass = panel.className == 'hide' ? '' : 'hide';
+                foldAll();
+                panel.parentNode.querySelector('.content').className = 'content ' + targetClass;
+                panel.className = targetClass;
+            }
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].addEventListener('click', function () {
+                    openPanel(this);
+                });
+            }
+            foldAll();
+        })();
+        
+        
     </script>
 </body>
 </html>
