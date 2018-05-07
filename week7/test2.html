@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动画练习</title>
+    <style>
+        body {
+            background: green;
+        }
+        
+        .test1 {
+            position: relative;
+            height: 200px;
+        }
+    
+        .weixin-box {
+            position:relative;
+        }
+        
+        .weixin-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .test1 img.weixin-mask {
+           animation-name: weixin;
+           animation-duration: 3s;
+           animation-timing-function: linear;
+           animation-delay: 0s;
+           animation-iteration-count: infinite;
+           animation-direction: normal;
+           animation-play-state: running;
+            
+        }
+        
+        @keyframes weixin {
+            0% {
+                opacity: 1;
+                }
+            0.1% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            50.1% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .test2 {
+            background: white;
+        }
+        
+        .test2 svg path {
+            stroke: red;
+            stroke-width: 4px;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation-name: drwnline;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+            
+        }
+        
+        @keyframes drwnline {
+            100% {stroke-dashoffset: 0;}
+        }
+        
+        .test3 {
+            background: white;
+            margin-top: 20px;
+        }
+        
+        .test4 {
+            background: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">
+        <div class="weixin-box">
+            <img src="../../week7/weixin_2.svg">
+            <img class="weixin-mask" src="../../week7/weixin_1.svg">
+        </div>
+    </div>
+    <div class="test2">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="300px" width="800px">
+            <!--<line x1="200" y1="0" x2="400" y2="200" style="stroke:red;stroke-width:2"/>
+            <rect x="50" y="0" width="50" height="100" style="fill:blue;stroke-width:1;stroke:yellow" />
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+            <!--<polyline points="20,20,40,25 60"/>
+            <path d="M150 0 L75 200 L225 200 Z" fill="yellow" />-->
+            
+            
+            
+            <path d="m235,125.5c0,-1 0.38269,-2.076118 0,-3c-0.541199,-1.306564 -1.474274,-2.149345 -2,-3c-1.175568,-1.902115 -2.852737,-2.173096 -4,-3c-1.813995,-1.307449 -3.549149,-2.95517 -7,-4c-2.871277,-0.869354 -6,-2 -9,-3c-3,-1 -6.186005,-0.692551 -8,-2c-1.147263,-0.826904 -2,-1 -4,-1c-2,0 -3,0 -5,0c-1,0 -3,0 -5,0c-3,0 -8.025818,-0.320366 -10,0c-3.121445,0.506538 -6,2 -9,3c-3,1 -5.085815,2.420433 -7,3c-3.450851,1.04483 -3.31076,3.534927 -5,5c-2.388962,2.07193 -4.917603,2.386871 -6,5c-0.38269,0.923882 -2.458801,3.693436 -3,5c-0.38269,0.923874 0,4 0,7c0,2 0,4 0,6c0,3 0,6 0,8c0,3 0,6 0,8c0,3 0,5 0,7c0,3 1.144287,4.934143 2,7c1.210144,2.92157 2.458801,4.693436 3,6c1.148056,2.771637 2,5 3,7c1,2 1.692551,4.186005 3,6c1.653809,2.29454 4.418854,4.418854 6,6c1.581146,1.581146 2.70546,2.346191 5,4c1.813995,1.307449 5.186005,3.692551 7,5c2.29454,1.653809 4.229355,2.331985 8,4c3.297333,1.458633 5.128723,2.130646 8,3c3.450851,1.04483 4.823746,3.486252 7,4c2.919754,0.689255 6.823746,1.486252 9,2c0.973251,0.229752 3.878555,0.493454 7,1c2.961258,0.480545 5.014984,0.75563 7,1c4.092209,0.503769 8.963837,2.11586 12,3c3.958679,1.152771 6.907791,1.496231 11,2c1.985016,0.24437 6.07843,0.789856 9,2c2.065857,0.855713 5.029968,0.511261 9,1c4.092224,0.503769 7.022491,1.633453 10,2c4.092224,0.503769 7,2 10,2c1,0 4.693451,1.458801 6,2c0.923889,0.38269 2,0 3,0c1,0 2,0 3,0c1,0 1,0 2,0c1,0 2.076111,0.38269 3,0c1.306549,-0.541199 3.458801,-1.693436 4,-3c0.38269,-0.923874 0,-2 0,-3c0,-1 0,-2 0,-3c0,-1 0,-2 0,-3c0,-1 0,-2 0,-3c0,-1 1,-1 1,-2c0,-1 -0.414215,-1.585785 1,-3c0.707092,-0.707108 1.458801,-0.693436 2,-2c0.765381,-1.847763 0.61731,-2.076126 1,-3c0.541199,-1.306564 2,-2 3,-4c1,-2 1.917603,-2.386871 3,-5c0.38269,-0.923874 1.346191,-2.70546 3,-5c1.307465,-1.813995 2.234619,-4.152237 3,-6c1.082397,-2.613129 2.31073,-4.080246 3,-7c0.513733,-2.176254 2.115875,-3.963837 3,-7c1.152771,-3.958679 2.540497,-6.053497 3,-8c0.513733,-2.176254 2,-6 3,-8c1,-2 2.972504,-3.647491 4,-8c0.68927,-2.919754 2.144287,-5.934143 3,-8c1.210144,-2.92157 2.493469,-5.878555 3,-9c0.320374,-1.974182 1.493469,-4.878555 2,-8c0.48056,-2.961266 0,-5 0,-7c0,-3 0,-5 0,-8c0,-3 0,-6 0,-9c0,-2 0,-4 0,-6c0,-2 0,-5 0,-8c0,-2 -0.458801,-3.693436 -1,-5c-0.38269,-0.923882 -1,-2 -1,-3c0,-2 -1.292908,-2.292892 -2,-3c-0.707092,-0.707108 -1.693451,-1.458801 -3,-2c-0.923889,-0.382683 -2.823761,-1.486259 -5,-2c-0.973236,-0.229752 -3,-1 -5,-2c-2,-1 -4,-1 -7,-1c0,0 -2,-1 -3,-1c-1,0 -3,0 -4,0c-2,0 -3,0 -5,0c-2,0 -3,0 -5,0c-3,0 -4.012909,-0.160179 -5,0c-3.121429,0.506538 -5.026764,1.770248 -6,2c-2.176239,0.513741 -3.823761,2.486259 -6,3c-1.946503,0.459503 -3.186005,-0.307449 -5,1c-1.147278,0.826904 -3.186005,0.692551 -5,2c-1.147278,0.826904 -2,1 -3,2c-1,1 -2.053497,0.540497 -4,1c-2.176239,0.513741 -3.152252,1.234634 -5,2c-1.306549,0.541199 -2.076111,1.617317 -3,2c-1.306549,0.541199 -2.053497,1.540497 -4,2c-2.176239,0.513741 -3.026764,1.770248 -4,2c-2.176254,0.513741 -3.076126,1.617317 -4,2c-1.306564,0.541199 -1.292892,2.292892 -2,3c-0.707108,0.707108 -2.458801,0.693436 -3,2c-0.38269,0.923882 -1.458801,0.693436 -2,2c-0.765366,1.847755 -0.61731,2.076118 -1,3c-0.541199,1.306564 -1.540497,1.053505 -2,3c-0.513748,2.176254 -2.458801,2.693436 -3,4c-0.38269,0.923882 -1,2 -1,3c0,1 -1,1 -2,3c-1,2 -1.458801,2.693436 -2,4c-0.38269,0.923882 0,3 -1,3l-1,2" id="svg_5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+        </svg>
+        
+        
+    </div>
+    <div class="test3">
+        <svg width="400" height="300" viewBox="0,0,40,30" preserveAspectRatio="xMinYMin meet" style="border:1px solid #cd0000;">
+            <rect x="10" y="5" width="20" height="15" fill="#cd0000"/>
+        </svg>
+        
+        <!-- meet viewbox 按最小比例等比缩放，200/200=1 400/200=2 ，所以viewbox没有被缩放-->
+        <svg width="400" height="200" viewBox="0 0 200 200" preserveAspectRatio="xMinYMin meet" style="border:1px solid #cd0000;">
+            <rect x="10" y="10" width="150" height="150" fill="#cd0000"/>
+        </svg>
+        <!-- meet viewbox 按最小比例等比缩放，200/300=66.7% 400/200=2 ，viewbox的高度超过viewport的高度了，所以宽和高按等比缩放，缩放为本来的66.7%-->
+        <svg width="400" height="200" viewBox="0 0 200 300" preserveAspectRatio="xMinYMin meet" style="border:1px solid #cd0000;">
+            <rect x="10" y="10" width="150" height="150" fill="#cd0000"/>
+        </svg>
+        <!-- slice也是要保持viewBox的纵横比的，不过，其作用是尽量填满viewport.按最大比例 同样，这里viewBox宽度200，SVG的width是400. 显然，要想最大化充满，viewBox的宽度就需要扩大为原来的两倍。于是，就有了上图viewBox放大两倍后的效果截图。由于viewBox部分区域超出了viewport, 视区之外内容是不可见的，于是就出现了slice所表意的“剪切”效果。-->
+        <svg width="400" height="200" viewBox="0 0 200 200" preserveAspectRatio="xMinYMin slice" style="border:1px solid #cd0000;">
+            <rect x="10" y="10" width="150" height="150" fill="#cd0000"/>
+        </svg>
+        <!-- 默认状态下，以及使用工具导出的SVG图形子啊设置宽高的时候都是保持比例不拉伸的，这对于图标等尺寸控制非常有用，但如果我们希望SVG图形像图片默认行为一样，宽高设置直接拉伸，就是设置这里的preserveAspectRatio="none"即可！原本好好的一个正方形，现在因为viewBox的拉伸，变成了一个宽高2:1的矩形了。(400/200,200/200)-->
+        <svg width="400" height="200" viewBox="0 0 200 200" preserveAspectRatio="none" style="border:1px solid #cd0000;">
+            <rect x="10" y="10" width="150" height="150" fill="#cd0000"/>
+        </svg>
+        <svg width="400" height="200"  style="border:1px solid #cd0000;">
+            <line x1="100" y1="0" x2="0" y2="100" style="stroke:#000;stroke-width:2" />
+            <path d="M10 10 H 80 V 80 H 10 Z" fill="yellow" />
+        </svg>
+        
+    </div>
+</body>
+</html>
