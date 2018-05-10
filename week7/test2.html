@@ -172,10 +172,118 @@
             
         }
         
+        .test9 .email_bottom {
+            position: absolute;
+            left: 2px;
+            top: 25px;
+        }
+        
         .test9 .email_top {
+            transform: rotate(180deg);
+            position: absolute;
+            top: -3px;
+            left: 1px;
+        }
+        
+        .test10 {
+            margin-top: 50px;
+            position:relative;
+        }
+        
+        .test10 .email_inner {
+            position: absolute;
+            top: 8px;
+            left: 20px;
+        }
+        
+        .test10 .email_top {
             position: absolute;
             left: 1px;
-            top: 24px;
+            top: -28px;
+        }
+        
+        .test10 .email_bottom {
+           position: absolute;
+            left: 2px;
+            top: 25px;
+        }
+        
+        .test11 {
+            position: relative;
+            margin-top: 50px;
+            width: 200px;
+            height: 100px;
+            top: 50px;
+        }
+        
+        .test11 .email_inner {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            
+            overflow: hidden;
+            height: 0;
+            
+            animation-name: inner;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+        
+        
+        @keyframes inner {
+            0% { top: 40px; height: 0px;}
+            15% { top:40px; height: 0px;}
+            30% { top: 24px; height: 32px;}
+            45% { top: 8px; height: 32px;}
+            60% { top: 8px; height: 32px;}
+            75% { top: 24px; height: 32px;}
+            90% { top: 40px; height: 0px;}
+            100% { top: 40px; height: 0px;}
+        }
+        
+        .test11 .email_bottom {
+            position: absolute;
+            left: 2px;
+            top: 25px;
+        }
+        
+        .test11 .email_top {
+            transform: rotate(180deg);
+            position: absolute;
+            top: -3px;
+            left: 1px;
+            
+            
+        }
+        
+        .test11 .email_top img {
+            animation-name: top;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform-origin: 50% 100%;
+            
+        }
+        
+        @keyframes top {
+            0% { transform: rotateX(0deg)}
+            
+            15%{ transform: rotateX(70deg)}
+            
+            30% { transform: rotateX(100deg)}
+            
+            45% {transform: rotateX(180deg)}
+            
+            60% {transform: rotateX(180deg)}
+            
+            75% {transform: rotateX(100deg)}
+            
+            90% {transform: rotateX(0deg)}
+            
+            100% {transform: rotateX(0deg)}
         }
     </style>
 </head>
@@ -260,6 +368,33 @@
         <div class="email_top">
             <img src="../../week7/email_top.svg">
         </div>
+        <div class="email_bottom">
+            <img src="../../week7/email_top.svg">
+        </div>
+    </div>
+    <div class="test10">
+        <img src="../../week7/email_bg.svg">
+        <div class="email_inner">
+            <img src="../../week7/email_inner.svg">
+        </div>
+        <div class="email_top">
+            <img src="../../week7/email_top.svg">
+        </div>
+        <div class="email_bottom">
+            <img src="../../week7/email_top.svg">
+        </div>    
+    </div>
+    <div class="test11">
+        <img src="../../week7/email_bg.svg">
+        <div class="email_inner">
+            <img src="../../week7/email_inner.svg">
+        </div>
+        <div class="email_top">
+            <img src="../../week7/email_top.svg">
+        </div>
+        <div class="email_bottom">
+            <img src="../../week7/email_top.svg">
+        </div>    
     </div>
 </body>
 </html>
