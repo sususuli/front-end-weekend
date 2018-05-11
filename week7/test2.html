@@ -264,7 +264,7 @@
             animation-delay: 0s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            transform-origin: 50% 100%;
+            transform-origin:50% 100%;
             
         }
         
@@ -284,6 +284,86 @@
             90% {transform: rotateX(0deg)}
             
             100% {transform: rotateX(0deg)}
+        }
+        
+        .test12 {
+            margin-top: 20px;
+        }
+        
+        .test12 .item {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+        }
+        
+        .test12 div.item:nth-child(1) {
+            background: -webkit-linear-gradient(red, blue);
+        }
+        
+        .test12 div.item:nth-child(2) {
+            background: -webkit-linear-gradient(right,red, blue);
+        }
+        
+        .test12 div.item:nth-child(3) {
+            background: -webkit-linear-gradient(left,red, blue);
+        }
+        
+        .test12 div.item:nth-child(4) {
+            background: -webkit-linear-gradient(bottom,red, blue);
+        }
+        
+        .test12 div.item:nth-child(5) {
+            background: -webkit-linear-gradient(left top,red, blue);
+        }
+        
+        .test12 div.item:nth-child(6) {
+            background: -webkit-linear-gradient(left top,red, transparent);
+        }
+        
+        .test12 div.item:nth-child(7) {
+            background: -webkit-linear-gradient(45deg,red, blue);
+        }
+        
+        .test12 div.item:nth-child(8) {
+            background: -webkit-radial-gradient(red, blue);
+        }
+        
+        .test12 div.item:nth-child(9) {
+            background: -webkit-radial-gradient(red 40%,blue 100%);
+        }
+        
+        .test13 {
+            margin-top: 20px;
+        }
+        
+        .test13 div.item:nth-child(1){
+            background-image: url("../../image/onepiece.jpg");
+            -webkit-mask-image: url("../../image/mask.png");
+            height: 260px;
+        }
+        
+        .test13 div.item:nth-child(2){
+            background-image: url("../../image/onepiece.jpg");
+            -webkit-mask-image: -webkit-linear-gradient(left,transparent,white);
+            height: 260px;
+        }
+        
+        .test13 div.item:nth-child(3){
+            background-image: url("../../image/onepiece.jpg");
+            -webkit-mask-image: -webkit-linear-gradient(left,transparent,white);
+            height: 260px;
+            animation-name: heartbeat;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            animation-timing-function:linear;
+            animation-iteration-count:infinite;
+            -webkit-mask-size: 100px 100%;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
+        @keyframes heartbeat {
+            from {-webkit-mask-position: 0% 0;}
+            to {-webkit-mask-position: 100% 0;}
         }
     </style>
 </head>
@@ -395,6 +475,22 @@
         <div class="email_bottom">
             <img src="../../week7/email_top.svg">
         </div>    
+    </div>
+    <div class="test12">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="test13">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
     </div>
 </body>
 </html>
