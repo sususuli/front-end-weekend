@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../bootstrap/jquery.min.js"></script>
+    <style>
+        /*整个广告div的css*/
+        #ad{
+            width:960px;
+            height:600px;
+            position:absolute;
+        }
+        /*取消小圆点*/
+        #ad li{
+            list-style:none;
+        }
+
+        #ad_img li{
+            display:none;
+        }
+
+        /*角落显示数字的ul*/
+        #ad_num{
+            overflow:hidden;
+            position:absolute;
+            bottom:10px;
+            right:10px;
+            color:#FFF;
+        }
+        /*数字的浮动*/
+        #ad_num li{
+            border:#FFF solid 1px;
+            float:left;
+            margin:0px 5px;
+            padding:3px 10px;
+        }
+
+        .numsover{
+            background-color:#CF3;
+            color:#F00;
+        }
+
+        .numsout{}
+
+    </style>
+</head>
+<body>
+    <div id="ad">
+        <ul id="ad_img">
+            <li><img src="../image/img1.jpg"  /></li>
+            <li><img src="../image/img2.jpg"  /></li>
+            <li><img src="../image/img3.jpg"  /></li>
+            <li><img src="../image/img4.jpg"  /></li>
+            <li><img src="../image/img5.jpg"  /></li>
+            <li><img src="../image/img6.jpg"  /></li>
+        </ul>
+
+        <ul id="ad_num">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            changeImg();
+        });
+
+        function changeImg(){
+            /*获取图片和索引的数组*/
+            var $imgs=$("#ad_img li");
+            var $nums=$("#ad_num li");
+
+            var isStop=false;
+            var index=0;
+
+            $nums.eq(index).addClass("numsover");
+            $nums.eq(index).siblings().removeClass("numsover");
+            $imgs.eq(index).show();
+
+            /*鼠标悬停在数字上的事件*/
+            $nums.mouseover(function(){
+                isStop=true;
+                /*先把数字的背景改了*/
+                $(this).addClass("numsover").siblings().removeClass("numsover");
+
+                /*图片的索引和数字的索引是对应的，所以获取当前的数字的索引就可以获得图片，从而对图片进行操作*/
+                index=$nums.index(this);
+                $imgs.eq(index).show("slow");
+                $imgs.eq(index).siblings().hide("slow");
+            }).mouseout(function(){isStop=false});
+            /*设置循环*/
+            setInterval(function(){
+                if(isStop) return;
+                if(index>=5) index=-1;
+                index++;
+
+                $nums.eq(index).addClass("numsover").siblings().removeClass("numsover");
+
+                $imgs.eq(index).show("slow");
+                $imgs.eq(index).siblings().hide("slow");
+
+            },2000);
+        }
+
+
+    </script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
