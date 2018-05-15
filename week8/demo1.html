@@ -2,7 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>网页设计</title>
+    <title>泰捷WEBOX、JEET官方网站</title>
+    <link rel="icon" href="../image/consulting.jpg"/>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../bootstrap/jquery.min.js"></script>
     <style>
@@ -11,6 +12,15 @@
         input, textarea, p, blockquote, th, td {
             margin: 0;
             padding: 0;
+        }
+
+        .head {
+            position: fixed;
+            z-index: 500;
+            background-color: #FFFFFF;
+            width: 100%;
+            top: 0px;
+            left: 0px;
         }
 
         .header {
@@ -58,12 +68,15 @@
             color: #CF9F51;
         }
 
+
+
         .product-container {
             clear: both;
             position: absolute;
             top: 61px;
             width: 100%;
-            height: 100px;
+            height: 120px;
+            background-color: #FFFFFF;
             opacity: 0;
         }
 
@@ -71,9 +84,10 @@
             clear: both;
             position: absolute;
             top: 61px;
+            height: 120px;
             width: 100%;
-            height: 100px;
             opacity: 0;
+            background-color: #FFFFFF;
         }
 
         .product-container .product-layer {
@@ -161,6 +175,11 @@
 
         .product-list2 a:hover {
             color: #CF9F51;
+        }
+
+        .contain {
+            margin-top: 61px;
+            position: relative;
         }
 
         #ad {
@@ -399,6 +418,14 @@
             text-decoration: none;
         }
 
+        .icon {
+            position: fixed;
+            z-index: 1000;
+            right: 2%;
+            top: 44%;
+        }
+
+
 
 
 
@@ -406,61 +433,63 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="">logic</a>
-
-            </div>
-            <div class="menu">
-                <a href="">主页
-                </a>
-                <a href="">WEBOX盒子</a>
-                <a href="">JEET耳机</a>
-                <a href="">商城</a>
-                <a href="">泰捷视频</a>
-                <a href="">新闻中心</a>
-                <a href="">博客</a>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-layer">
-                <div class="product-list hezi">
-                    <a href="" class="product-item">
-                        <img src="../image/product1.png" alt="" />
-                        <span>WEBOX 30 PRO</span>
-                    </a>
-                    <a href="" class="product-item">
-                        <img src="../image/product2.png" alt="" />
-                        <span>WEBOX 30s 全新增强版</span>
-                    </a>
-                    <a href="" class="product-item">
-                        <img src="../image/product3.png" alt="" />
-                        <span>泰捷方盒</span>
-                    </a>
-                    <a href="" class="product-item">
-                        <img src="../image/product5.png" alt="" />
-                        <span>WEBOX MIX</span>
-                    </a>
-                    <a href="" class="product-item">
-                        <img src="../image/product6.png" alt="" />
-                        <span>WEBOX 猫眼</span>
-                    </a>
+    <div class="head">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="">logic</a>
 
                 </div>
+                <div class="menu">
+                    <a href="">主页</a>
+                    <a href="" id="WEBOX" onmouseover="mouseOver()" onmouseout="mouseOut()">WEBOX盒子</a>
+                    <a href="" id="JEET" onmouseover="mouseOver()" onmouseout="mouseOut()">JEET耳机</a>
+                    <a href="">商城</a>
+                    <a href="">泰捷视频</a>
+                    <a href="">新闻中心</a>
+                    <a href="">博客</a>
+                </div>
             </div>
-        </div>
-        <div class="product-container2">
-            <div class="product-layer2">
-                <div class="product-list2 hezi2">
-                    <a href="" class="product-item2">
-                        <img src="../image/product7.png" alt="" />
-                        <span>JEET WI 耳机</span>
-                    </a>
+            <div class="product-container" id="container1" onmouseover="mouseOver()" onmouseout="mouseOut()">
+                <div class="product-layer">
+                    <div class="product-list hezi">
+                        <a href="" class="product-item">
+                            <img src="../image/product1.png" alt="" />
+                            <span>WEBOX 30 PRO</span>
+                        </a>
+                        <a href="" class="product-item">
+                            <img src="../image/product2.png" alt="" />
+                            <span>WEBOX 30s 全新增强版</span>
+                        </a>
+                        <a href="" class="product-item">
+                            <img src="../image/product3.png" alt="" />
+                            <span>泰捷方盒</span>
+                        </a>
+                        <a href="" class="product-item">
+                            <img src="../image/product5.png" alt="" />
+                            <span>WEBOX MIX</span>
+                        </a>
+                        <a href="" class="product-item">
+                            <img src="../image/product6.png" alt="" />
+                            <span>WEBOX 猫眼</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-container2" id="container2">
+                <div class="product-layer2">
+                    <div class="product-list2 hezi2">
+                        <a href="" class="product-item2">
+                            <img src="../image/product7.png" alt="" />
+                            <span>JEET WI 耳机</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="contain">
         <div id="ad">
             <ul id="ad_img">
@@ -518,21 +547,24 @@
                         <img src="../image/S10.jpg" alt=""/>
                         <div class="info">
                             <p>600天打磨,JEET要媲美千元耳机</p>
-                            <p>不知道什么时候，网上出了一款“非...</p>
+                            <p>不知道什么时候，网上出了一
+                                款“非...</p>
                         </div>
                     </div>
                     <div class="news">
                         <img src="../image/S7.jpg" alt=""/>
                         <div class="info">
                             <p>做WEBOX，需要完美的变态主义</p>
-                            <p>腾讯联手泰捷制造的OTT盒子--泰捷webox...</p>
+                            <p>腾讯联手泰捷制造的OTT盒子--泰捷
+                                webox...</p>
                         </div>
                     </div>
                     <div class="news">
                         <img src="../image/S9.jpg" alt=""/>
                         <div class="info">
                             <p>呼吁行业不要做低价的机顶盒</p>
-                            <p>希望能够共同给用户塑造一个优质的盒子品类</p>
+                            <p>希望能够共同给用户塑造一个优质的盒子品
+                                类</p>
                         </div>
                     </div>
                     <div style="clear: both"></div>
@@ -576,16 +608,24 @@
                 <img src="../image/bottom-logo.png" alt=""/>
                 <h2>
                     <span>Copyright&nbsp;&nbsp;2010-2016&nbsp;&nbsp;
-                    TOGIC&nbsp;&nbsp;深圳市泰捷软件技术有限公司&nbsp;&nbsp;
+                    TOGIC&nbsp;&nbsp;深圳市泰捷软件技术有限公司
+&nbsp;&nbsp;
                         <a href="">粤ICP备15076607号-1</a>
                     </span>
-                    <a href="" class="a-link"><img src="../image/govIcon.gif" alt=""/></a>
-                    <a href="" class="a-link"><img src="../image/police_2.png" alt=""/></a>
-                    <a href="" class="a-link"><img src="../image/police_3.png" alt=""/></a>
-                    <a href="" class="a-link"><img src="../image/police_4.png" alt=""/></a>
+                    <a href="" class="a-link"><img
+                            src="../image/govIcon.gif" alt=""/></a>
+                    <a href="" class="a-link"><img
+                            src="../image/police_2.png" alt=""/></a>
+                    <a href="" class="a-link"><img
+                            src="../image/police_3.png" alt=""/></a>
+                    <a href="" class="a-link"><img
+                            src="../image/police_4.png" alt=""/></a>
                 </h2>
             </div>
 
+        </div>
+        <div class="icon">
+            <img src="../image/consulting.jpg" alt=""/>
         </div>
 
     </div>
@@ -611,9 +651,11 @@
             $nums.mouseover(function(){
                 isStop=true;
                 /*先把数字的背景改了*/
-                $(this).addClass("numsover").siblings().removeClass("numsover");
+                $(this).addClass("numsover").siblings().removeClass
+                ("numsover");
 
-                /*图片的索引和数字的索引是对应的，所以获取当前的数字的索引就可以获得图片，从而对图片进行操作*/
+                /*图片的索引和数字的索引是对应的，所以获取当前的数字
+                 的索引就可以获得图片，从而对图片进行操作*/
                 index=$nums.index(this);
                 $imgs.eq(index).show("slow");
                 $imgs.eq(index).siblings().hide("slow");
@@ -624,17 +666,67 @@
                 if(index>=5) index=-1;
                 index++;
 
-                $nums.eq(index).addClass("numsover").siblings().removeClass("numsover");
+                $nums.eq(index).addClass("numsover").siblings
+                ().removeClass("numsover");
 
                 $imgs.eq(index).show("slow");
                 $imgs.eq(index).siblings().hide("slow");
 
             },18000);
         }
-
-
     </script>
+    <script>
+        (function(){
+            var webox = document.getElementById("WEBOX");
+            var jeet = document.getElementById("JEET");
 
+            var container1 = document.getElementById("container1");
+            var container2 = document.getElementById("container2");
+
+            container1.style.opacity = 0;
+            container2.style.opacity = 0;
+
+            function hideAll(){
+                container1.style.opacity = container2.style.opacity = 0;
+            }
+
+            webox.onclick = function(){
+                hideAll();
+                container1.style.opacity = 1;
+            }
+
+            jeet.onclick = function(){
+                hideAll();
+                container2.style.opacity = 1;
+            }
+        })();
+        /*/!*$(document).ready(function(){
+            $('#WEBOX').hover(function() {
+                $("#container1").css('opacity', '1');
+            });
+            $("#container1").hover(function() {
+                $(this).css('opacity', '1');
+            }, function() {
+                $(this).css('opacity', '0');
+            }) ;
+
+        })*!/
+        function mouseOver()
+        {
+            var container1 = document.getElementById("container1");
+            container1.style.opacity = 1;
+            var container2 = document.getElementById("container2");
+            container2.style.opacity = 1;
+
+        }
+        function mouseOut()
+        {
+            var container1 = document.getElementById("container1");
+            container1.style.opacity = 0;
+            var container2 = document.getElementById("container2");
+            container2.style.opacity = 0;
+        }*/
+    </script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
