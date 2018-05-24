@@ -91,8 +91,8 @@
 
                 /*图片的索引和数字的索引是对应的，所以获取当前的数字的索引就可以获得图片，从而对图片进行操作*/
                 index=$nums.index(this);
-                $imgs.eq(index).show("slow");
-                $imgs.eq(index).siblings().hide("slow");
+                $imgs.eq(index).fadeIn("slow");
+                $imgs.eq(index).siblings().fadeOut("slow");
             }).mouseout(function(){isStop=false});
             /*设置循环*/
             setInterval(function(){
@@ -102,8 +102,8 @@
 
                 $nums.eq(index).addClass("numsover").siblings().removeClass("numsover");
 
-                $imgs.eq(index).show("slow");
-                $imgs.eq(index).siblings().hide("slow");
+                $imgs.eq(index).fadeIn("slow");
+                $imgs.eq(index).siblings().fadeOut("slow");
 
             },2000);
         }

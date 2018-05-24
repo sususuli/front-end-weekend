@@ -28,6 +28,10 @@
             height: 61px;
         }
 
+        
+
+        
+
         .logo {
             height: 27px;
             width: 20%;
@@ -61,6 +65,7 @@
             font-size: 14px;
             position: relative;
             height: 61px;
+            cursor: pointer;
         }
 
         .menu a:hover {
@@ -75,29 +80,29 @@
             position: absolute;
             top: 61px;
             width: 100%;
-            height: 120px;
-            background-color: #FFFFFF;
-            opacity: 0;
+            height: 0px;
+            background-color: #ffffff;
+            overflow: hidden;
         }
 
         .product-container2 {
             clear: both;
             position: absolute;
             top: 61px;
-            height: 120px;
+            height: 0px;
             width: 100%;
-            opacity: 0;
             background-color: #FFFFFF;
+            overflow: hidden;
         }
 
         .product-container .product-layer {
-            min-width: 900px;
+            /*min-width: 900px;*/
             height: 100%;
             margin: auto;
         }
 
         .product-container2 .product-layer2 {
-            min-width: 900px;
+            /*min-width: 900px;*/
             height: 100%;
             margin: auto;
         }
@@ -157,6 +162,7 @@
             font-size: 14px;
             vertical-align: bottom;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .product-layer2 .product-item2 {
@@ -168,13 +174,13 @@
             text-decoration: none;
         }
 
-
-        .product-list a:hover {
-            color: #CF9F51;
+        
+        .product-list .product-item:hover {
+            color: rgb(173, 132, 17);
         }
 
-        .product-list2 a:hover {
-            color: #CF9F51;
+        .product-list2 .product-item2:hover {
+            color: rgb(173, 132, 17);
         }
 
         .contain {
@@ -287,7 +293,7 @@
             max-width: 1260px;
             margin: 0 auto;
             padding-bottom: 20px;
-            min-width: 1000px;
+            /*min-width: 1000px;*/
             width: 1260px;
             height: 500px;
 
@@ -300,6 +306,25 @@
         .news {
             width: 31.33%;
             float: left;
+        }
+
+        .news .new-hover {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        
+
+        .news  img {
+            width: 100%;
+        }
+
+        .news .new-hover:hover {
+            cursor: pointer;
+            position: relative;
+            top:-10px;
+            box-shadow: 0px 0px 27px rgba(0,0,0,0.54);
         }
 
         .pro-info .news:nth-child(2) {
@@ -329,6 +354,7 @@
 
         .pro-info .info {
             height: 137px;
+            width: 100%;
             background-color: white;
         }
 
@@ -349,7 +375,7 @@
         .map .inner {
             padding-bottom: 50px;
             width: 70%;
-            min-width: 1000px;
+            /*min-width: 1000px;*/
             margin: auto;
             border-top: 1px solid #ededed;
             overflow: hidden;
@@ -371,6 +397,15 @@
         .map .map-link dd {
             margin-top: 10px;
             line-height: 18px;
+        }
+
+        .map-link .dd-hover {
+            text-decoration: none;
+            color: #999999;
+        }
+
+        .map-link .dd-hover:hover {
+            color: #CF9F51;
         }
 
         .foot {
@@ -437,10 +472,13 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
+
+                        
+
                     <a href="">logic</a>
 
                 </div>
-                <div class="menu">
+                <div class="menu" >
                     <a href="">主页</a>
                     <a href="" id="WEBOX" >WEBOX盒子</a>
                     <a href="" id="JEET" >JEET耳机</a>
@@ -544,28 +582,37 @@
                 </a>
                 <div class="new">
                     <div class="news">
-                        <img src="../image/S10.jpg" alt=""/>
-                        <div class="info">
-                            <p>600天打磨,JEET要媲美千元耳机</p>
-                            <p>不知道什么时候，网上出了一
-                                款“非...</p>
-                        </div>
+                        <a href="" class="new-hover">
+                                <img src="../image/S10.jpg" alt=""/>
+                                <div class="info">
+                                    <p>600天打磨,JEET要媲美千元耳机</p>
+                                    <p>不知道什么时候，网上出了一
+                                        款“非...</p>
+                                </div>
+                        </a>                        
                     </div>
                     <div class="news">
-                        <img src="../image/S7.jpg" alt=""/>
-                        <div class="info">
-                            <p>做WEBOX，需要完美的变态主义</p>
-                            <p>腾讯联手泰捷制造的OTT盒子--泰捷
-                                webox...</p>
-                        </div>
+                        <a href="" class="new-hover">
+                                <img src="../image/S7.jpg" alt=""/>
+                                <div class="info">
+                                    <p>做WEBOX，需要完美的变态主义</p>
+                                    <p>腾讯联手泰捷制造的OTT盒子--泰捷
+                                        webox...</p>
+                                </div>
+                        </a>                        
                     </div>
                     <div class="news">
-                        <img src="../image/S9.jpg" alt=""/>
-                        <div class="info">
-                            <p>呼吁行业不要做低价的机顶盒</p>
-                            <p>希望能够共同给用户塑造一个优质的盒子品
-                                类</p>
-                        </div>
+                        <a href="" class="new-hover">
+                                <img src="../image/S9.jpg" alt=""/>
+                                <div class="info">
+                                    <p>呼吁行业不要做低价的机顶盒</p>
+                                    <p>希望能够共同给用户塑造一个优质的盒子品
+                                        类</p>
+                                </div>
+                        </a>
+                                
+                        
+                        
                     </div>
                     <div style="clear: both"></div>
                 </div>
@@ -576,27 +623,27 @@
                 <div class="map-link">
                     <dl>
                         <dt>关于泰捷</dt>
-                        <dd>了解泰捷</dd>
-                        <dd>加入泰捷</dd>
-                        <dd>联系我们</dd>
+                        <dd><a href="" class="dd-hover">了解泰捷</a></dd>
+                        <dd><a href="" class="dd-hover">加入泰捷</a></dd>
+                        <dd><a href="" class="dd-hover">联系我们</a></dd>
                     </dl>
                     <dl>
                         <dt>帮助中心</dt>
-                        <dd>购物指南</dd>
-                        <dd>支付方式</dd>
-                        <dd>配送方式</dd>
+                        <dd><a href="" class="dd-hover">购物指南</a></dd>
+                        <dd><a href="" class="dd-hover">支付方式</a></dd>
+                        <dd><a href="" class="dd-hover">配送方式</a></dd>
                     </dl>
                     <dl>
                         <dt>服务支持</dt>
-                        <dd>三包服务</dd>
-                        <dd>自助服务</dd>
+                        <dd><a href="" class="dd-hover">三包服务</a></dd>
+                        <dd><a href="" class="dd-hover">自助服务</a></dd>
                     </dl>
                     <dl>
                         <dt>关于我们</dt>
-                        <dd>WEBOX微博</dd>
-                        <dd>JEET微博</dd>
-                        <dd>官方微信</dd>
-                        <dd>泰捷论坛</dd>
+                        <dd><a href="" class="dd-hover">WEBOX微博</a></dd>
+                        <dd><a href="" class="dd-hover">JEET微博</a></dd>
+                        <dd><a href="" class="dd-hover">官方微信</a></dd>
+                        <dd><a href="" class="dd-hover">泰捷论坛</a></dd>
                     </dl>
                 </div>
             </div>
@@ -657,8 +704,8 @@
                 /*图片的索引和数字的索引是对应的，所以获取当前的数字
                  的索引就可以获得图片，从而对图片进行操作*/
                 index=$nums.index(this);
-                $imgs.eq(index).show("slow");
-                $imgs.eq(index).siblings().hide("slow");
+                $imgs.eq(index).fadeIn("slow");
+                $imgs.eq(index).siblings().fadeOut("slow");
             }).mouseout(function(){isStop=false});
             /*设置循环*/
             setInterval(function(){
@@ -669,64 +716,54 @@
                 $nums.eq(index).addClass("numsover").siblings
                 ().removeClass("numsover");
 
-                $imgs.eq(index).show("slow");
-                $imgs.eq(index).siblings().hide("slow");
+                $imgs.eq(index).fadeIn("slow");
+                $imgs.eq(index).siblings().fadeOut("slow");
 
             },18000);
         }
     </script>
     <script>
-        (function(){
-            var webox = document.getElementById("WEBOX");
-            var jeet = document.getElementById("JEET");
-
-            var container1 = document.getElementById("container1");
-            var container2 = document.getElementById("container2");
-
-            container1.style.opacity = 0;
-            container2.style.opacity = 0;
-
-            function hideAll(){
-                container1.style.opacity = container2.style.opacity = 0;
-            }
-
-            webox.onclick = function(){
-                hideAll();
-                container1.style.opacity = 1;
-            }
-
-            jeet.onclick = function(){
-                hideAll();
-                container2.style.opacity = 1;
-            }
-        })();
-        /*/!*$(document).ready(function(){
+        
+        $(document).ready(function(){
             $('#WEBOX').hover(function() {
-                $("#container1").css('opacity', '1');
-            });
-            $("#container1").hover(function() {
-                $(this).css('opacity', '1');
+                console.log("a2a");
+                $("#container1").css('height', '120px');
             }, function() {
-                $(this).css('opacity', '0');
+                $("#container1").css('height', '0');
+            });
+
+            $("#container1").hover(function() {
+                console.log("aa");
+                $(this).css('height', '120px');
+            }, function() {
+                $(this).css('height', '0');
             }) ;
 
-        })*!/
-        function mouseOver()
-        {
-            var container1 = document.getElementById("container1");
-            container1.style.opacity = 1;
-            var container2 = document.getElementById("container2");
-            container2.style.opacity = 1;
-
-        }
-        function mouseOut()
-        {
-            var container1 = document.getElementById("container1");
-            container1.style.opacity = 0;
-            var container2 = document.getElementById("container2");
-            container2.style.opacity = 0;
-        }*/
+        });
+        
     </script>
+
+    <script>    
+        $(document).ready(function(){
+             $('#JEET').hover(function() {
+                console.log("a2a");
+                 $("#container2").css('height', '120px');
+            }, function() {
+                $("#container2").css('height', '0');
+            });
+
+            $("#container2").hover(function() {
+                console.log("aa");
+                $(this).css('height', '120px');
+            }, function() {
+                $(this).css('height', '0');
+            }) ;
+
+        });    
+    </script>
+
+
+
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
