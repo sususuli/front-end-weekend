@@ -1,0 +1,47 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>创建基本的垂直导航条</title>
+    <style>
+        .nav {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 8em;
+            background-color: #8BD400;
+            border: 1px solid #486B02;
+        }
+
+        .nav a {
+            display: block;
+            color: #2b3f00;
+            text-decoration: none;
+            border-top: 1px solid #e4ffd3;
+            border-bottom: 1px solid #486b02;
+            padding: 0.3em 1em;
+        }
+
+        .nav .last a {
+            border-bottom: 0;
+        }
+
+        .nav a:hover,
+        .nav a:focus,
+        .nav .selected {
+            background-color: #6da203;
+            color: #e4ffd3;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="" class="selected">Home</a></li><!--默认被选中-->
+        <li><a href="">About</a></li>
+        <li><a href="">Our Services</a></li>
+        <li><a href="">Our Work</a></li>
+        <li><a href="">News</a></li>
+        <li class="last"><a href="">Contact</a></li>
+    </ul>
+</body>
+</html>
